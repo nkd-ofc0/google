@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acessando Cetor...</title>
 
-    <meta http-equiv="refresh" content="0; url=https://www.instagram.com/cetormanutencaodefachada/">
+    <meta http-equiv="refresh" content="0; url=https://www.google.com/search?sca_esv=15ff0100134ea361&sxsrf=ANbL-n4Hlm3S9EPGRuuo5lZFpy5xQXByDQ:1775684595191&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOV9xOM2oJgD08PrutQrLJjXw4KnANytW1RRIf-8Y-1ZE-UH3gYQAKLKF9ZCj3U8yYbnoQnObSDr_v5tU9BLsGODwKkHENKlMCLyCabDLkickSpfmew%3D%3D&q=Cetor+Manuten%C3%A7%C3%A3o+Predial+Coment%C3%A1rios&sa=X&ved=2ahUKEwiy8J3MnN-TAxXwF7kGHWBHNr4Q0bkNegQIIhAH&biw=1536&bih=703&dpr=1.25#lrd=0x997b87d71b6bb9:0x6d01b82fe0757fab,3,,,,">
 
     <style>
         body {
@@ -35,27 +35,19 @@
 </head>
 <body>
     <div class="container">
-        <h1>Redirecionando para a Cetor...</h1>
+        <h1>Redirecionando para o Google...</h1>
         <p>
             Se você não for redirecionado automaticamente em alguns segundos, 
-            <a id="link-destino" href="#">clique aqui</a>.
+            <a id="link-destino" href="https://www.google.com/search?sca_esv=15ff0100134ea361&sxsrf=ANbL-n4Hlm3S9EPGRuuo5lZFpy5xQXByDQ:1775684595191&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOV9xOM2oJgD08PrutQrLJjXw4KnANytW1RRIf-8Y-1ZE-UH3gYQAKLKF9ZCj3U8yYbnoQnObSDr_v5tU9BLsGODwKkHENKlMCLyCabDLkickSpfmew%3D%3D&q=Cetor+Manuten%C3%A7%C3%A3o+Predial+Coment%C3%A1rios&sa=X&ved=2ahUKEwiy8J3MnN-TAxXwF7kGHWBHNr4Q0bkNegQIIhAH&biw=1536&bih=703&dpr=1.25#lrd=0x997b87d71b6bb9:0x6d01b82fe0757fab,3,,,,">clique aqui</a>.
         </p>
     </div>
 
     <script>
-        // 1. Pega a URL definida lá em cima na meta tag
-        const metaTag = document.querySelector('meta[http-equiv="refresh"]');
-        // Extrai a URL limpa
-        const urlDestino = metaTag ? metaTag.getAttribute('content').split('url=')[1] : 'https://www.instagram.com/cetormanutencaodefachada/';
+        // REDIRECIONAMENTO SECUNDÁRIO (FALLBACK JS):
+        // Variável declarada explicitamente para evitar erros de formatação com URLs muito complexas.
+        const urlDestino = "https://www.google.com/search?sca_esv=15ff0100134ea361&sxsrf=ANbL-n4Hlm3S9EPGRuuo5lZFpy5xQXByDQ:1775684595191&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOV9xOM2oJgD08PrutQrLJjXw4KnANytW1RRIf-8Y-1ZE-UH3gYQAKLKF9ZCj3U8yYbnoQnObSDr_v5tU9BLsGODwKkHENKlMCLyCabDLkickSpfmew%3D%3D&q=Cetor+Manuten%C3%A7%C3%A3o+Predial+Coment%C3%A1rios&sa=X&ved=2ahUKEwiy8J3MnN-TAxXwF7kGHWBHNr4Q0bkNegQIIhAH&biw=1536&bih=703&dpr=1.25#lrd=0x997b87d71b6bb9:0x6d01b82fe0757fab,3,,,,";
 
-        // 2. Atualiza o link visual (caso o usuário precise clicar)
-        const linkElement = document.getElementById('link-destino');
-        if (linkElement) {
-            linkElement.href = urlDestino;
-        }
-
-        // 3. Fallback de Segurança (JavaScript):
-        // Se a meta tag falhar por algum motivo de navegador antigo, o JS força a ida após 1 segundo.
+        // Força o redirecionamento via JavaScript após 1 segundo caso o HTML Meta Refresh falhe.
         setTimeout(function() {
             window.location.href = urlDestino;
         }, 1000);
